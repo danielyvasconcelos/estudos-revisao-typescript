@@ -1,11 +1,11 @@
+"use strict";
 //@ts-check
 //aponta possiveis erros
-//typescript ja vem instalado no vscode
 // npm install -g typescript : instalação global do compilador do TS
-var frase = 'Front End';
-var total = 99.90;
-var empresas = ['Apple', 'Samsung', 'LG', 1 + 9]; // arrays : 
-var operacao = 100 + 200;
+const frase = 'Front End';
+const total = 99.90;
+const empresas = ['Apple', 'Samsung', 'LG', 1 + 9]; // arrays : 
+const operacao = 100 + 200;
 //toLowerCase(); - metodo que deixa tudo minusculo
 console.log(frase.toLowerCase()); // depuração
 console.log(total.toFixed()); // total.toFixed() - metodo quue arredonda o numero e retorna uma string
@@ -19,7 +19,7 @@ console.log(empresas.toLocaleString());
 // numero com operadores matematicos realizam operações 
 console.log(operacao);
 //console.log(operacao.toPrecision);
-var produtos = [
+const produtos = [
     {
         nome: 'senhor dos aneis',
         tipo: 'livro',
@@ -35,6 +35,6 @@ var produtos = [
 ];
 // pesquisar sobre DX
 function filtrarLivros(dados) {
-    return dados.filter(function (item) { return item.tipo === 'livro'; }); // 
+    return dados.filter(item => item.tipo === 'livro'); // 
 }
 console.log(filtrarLivros(produtos));
