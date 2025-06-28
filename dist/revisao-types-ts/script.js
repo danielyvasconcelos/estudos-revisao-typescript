@@ -1,24 +1,20 @@
 "use strict";
-//@ts-check
-//aponta possiveis erros
-// npm install -g typescript : instalação global do compilador do TS
-const frase = 'Front End';
-const total = 99.90;
-const empresas = ['Apple', 'Samsung', 'LG', 1 + 9]; // arrays : 
-const operacao = 100 + 200;
-//toLowerCase(); - metodo que deixa tudo minusculo
-console.log(frase.toLowerCase()); // depuração
-console.log(total.toFixed()); // total.toFixed() - metodo quue arredonda o numero e retorna uma string
-// não entendi muitoo bem o que esse 
-//coverte numero em  string 
+// revisao-types-ts/script.ts
+// Não precisamos de "use strict" ou "//@ts-check" em arquivos .ts
+// O TypeScript já lida com isso.
+const frase = 'Front End'; // Tipo explícito 'string'
+const total = 99.90; // Tipo explícito 'number'
+// TypeScript pode inferir o tipo [string, string, string, number] aqui,
+// ou você pode ser mais específico se quiser, por exemplo: (string | number)[]
+const empresas = ['Apple', 'Samsung', 'LG', 1 + 9];
+const operacao = 100 + 200; // Tipo explícito 'number'
+console.log(frase.toLowerCase());
+console.log(total.toFixed());
 console.log(total.toLocaleString());
 console.log(frase.toLocaleString());
-//empresas.map((empresa)=> empresa.toLocaleLowerCase());
-//retorna as strings e soma os numeros 
 console.log(empresas.toLocaleString());
-// numero com operadores matematicos realizam operações 
 console.log(operacao);
-//console.log(operacao.toPrecision);
+// 2. Tipar o array 'produtos' explicitamente como um array de 'Produto'.
 const produtos = [
     {
         nome: 'senhor dos aneis',
@@ -33,8 +29,12 @@ const produtos = [
         tipo: 'livro',
     },
 ];
-// pesquisar sobre DX
+// ---
+// 3. Tipar os parâmetros da função e o retorno diretamente no TypeScript.
+// 'dados: Produto[]' significa que 'dados' é um array de objetos 'Produto'.
+// 'item: Produto' dentro do filter indica que cada elemento é um 'Produto'.
+// ': Produto[]' no final da assinatura da função indica que ela retorna um array de 'Produto'.
 function filtrarLivros(dados) {
-    return dados.filter(item => item.tipo === 'livro'); // 
+    return dados.filter((item) => item.tipo === 'livro');
 }
 console.log(filtrarLivros(produtos));
