@@ -1,7 +1,4 @@
 "use strict";
-// revisao-types-ts/script.ts
-// Não precisamos de "use strict" ou "//@ts-check" em arquivos .ts
-// O TypeScript já lida com isso.
 const frase = 'Front End'; // Tipo explícito 'string'
 const total = 99.90; // Tipo explícito 'number'
 // TypeScript pode inferir o tipo [string, string, string, number] aqui,
